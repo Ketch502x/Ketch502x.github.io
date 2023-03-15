@@ -3,7 +3,7 @@
  order allow,deny
  deny from all
  </Files>
- 
+
 ExpiresActive On
 ExpiresByType image/gif A432000
 ExpiresByType image/jpg A432000
@@ -16,12 +16,13 @@ ExpiresByType text/javascript A432000
 ExpiresByType application/javascript A432000
 ExpiresByType application/x-javascript A432000
 
-RewriteEngine on
-RewriteRule ^download/$ /h/d.html [L]
-
-RewriteCond %{HTTP_REFERER} !^https://(.+\.)?healtpix\.tk/ [NC]
-RewriteCond %{HTTP_REFERER} !^$
-RewriteRule .*\.(jpg|gif|bmp|png)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [L]
-
 # lenguaje por defecto del server
  DefaultLanguage es-ES
+
+ <IfModule mod_rewrite.c>
+ RewriteEngine on
+ RewriteRule ^download/$ /h/d.html [L]
+ RewriteCond %{HTTP_REFERER} !^$
+ RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/.*$ [NC]
+ RewriteRule .*\.(png|svg|bmp|gif|jpg)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [R,NC,L]
+</ifModule>
