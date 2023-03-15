@@ -41,10 +41,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html
 #RewriteRule ^([a-z]+)/?$ $1.html [NC]
- RewriteEngine on
  # Escape spaces and question marks. 
  RewriteCond %{HTTP_REFERER} !^$
- RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/index/.*$ [NC]
+ RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/.*$ [NC]
  RewriteRule .*\.(png|svg|bmp|gif|jpg)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [R,NC,L]
 </ifModule>
 
