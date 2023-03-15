@@ -18,3 +18,6 @@ RewriteRule ^download/$ /h/d.html [L]
 RewriteCond %{HTTP_REFERER} !^https://(.+\.)?healtpix\.tk/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
 RewriteRule .*\.(jpg|gif|bmp|png)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [L]
+
+# lenguaje por defecto del server
+ DefaultLanguage es-ES
