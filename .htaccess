@@ -15,7 +15,6 @@ ExpiresByType application/x-javascript A432000
 RewriteEngine on
 RewriteRule ^download/$ /h/d.html [L]
 
-RewriteEngine On
 RewriteCond %{HTTP_REFERER} !^http://(.+\.)?healtpix\.tk/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
 RewriteRule .*\.(jpg|gif|bmp|png)$ http://healtpix.tk/h/img/no_se_permite_hotlinking.jpg [L]
