@@ -1,5 +1,9 @@
-order allow,deny
-deny from all
+# asegurar htaccess
+ <Files .htaccess>
+ order allow,deny
+ deny from all
+ </Files>
+ 
 ExpiresActive On
 ExpiresByType image/gif A432000
 ExpiresByType image/jpg A432000
