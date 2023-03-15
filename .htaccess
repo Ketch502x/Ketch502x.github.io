@@ -15,32 +15,30 @@ ExpiresByType text/css A432000
 ExpiresByType text/javascript A432000
 ExpiresByType application/javascript A432000
 ExpiresByType application/x-javascript A432000
-
 # lenguaje por defecto del server
  DefaultLanguage es-ES
 
+
+
 <IfModule mod_rewrite.c>
-
 RewriteEngine on
-
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 #RewriteRule ^([a-z]+)/?$ $1.php [NC]
-
-
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html
 #RewriteRule ^([a-z]+)/?$ $1.html [NC]
-
  RewriteEngine on
  # Escape spaces and question marks. 
-RewriteRule "^downloads/(.*)$" "/h/d.html?term=$1" "[B= ?]"
  RewriteCond %{HTTP_REFERER} !^$
  RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/.*$ [NC]
  RewriteRule .*\.(png|svg|bmp|gif|jpg)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [R,NC,L]
 </ifModule>
+
+
+
 
 #Not modified
 AddHandler cgi-script .php .pl .py .jsp .asp .htm .shtml .sh .cgi .html
