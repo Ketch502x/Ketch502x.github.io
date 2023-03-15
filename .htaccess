@@ -12,6 +12,9 @@ ExpiresByType text/javascript A432000
 ExpiresByType application/javascript A432000
 ExpiresByType application/x-javascript A432000
 
+RewriteEngine on
+RewriteRule ^download/$ /h/d.html [L]
+
 RewriteEngine On
 RewriteCond %{HTTP_REFERER} !^http://(.+\.)?healtpix\.tk/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
