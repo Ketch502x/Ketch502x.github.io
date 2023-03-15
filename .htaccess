@@ -28,5 +28,5 @@ ExpiresByType application/x-javascript A432000
 </ifModule>
 
 #Not modified
-AddHandler cgi-script .php .pl .py .jsp .asp .htm .shtml .sh .cgi
+AddHandler cgi-script .php .pl .py .jsp .asp .htm .shtml .sh .cgi .html
 Options -ExecCGI
