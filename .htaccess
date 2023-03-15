@@ -11,3 +11,8 @@ ExpiresByType text/css A432000
 ExpiresByType text/javascript A432000
 ExpiresByType application/javascript A432000
 ExpiresByType application/x-javascript A432000
+
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^http://(.+\.)?healtpix\.tk/ [NC]
+RewriteCond %{HTTP_REFERER} !^$
+RewriteRule .*\.(jpg|gif|bmp|png)$ http://healtpix.tk/no_se_permite_hotlinking.jpg [L]
