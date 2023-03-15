@@ -4,6 +4,9 @@
  deny from all
  </Files>
 
+ #Error pages list
+ ErrorDocument 404 /404.html
+
 ExpiresActive On
 ExpiresByType image/gif A432000
 ExpiresByType image/jpg A432000
