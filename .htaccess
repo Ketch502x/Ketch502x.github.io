@@ -44,7 +44,7 @@ RewriteRule ^(.*)$ $1.html
  RewriteEngine on
  # Escape spaces and question marks. 
  RewriteCond %{HTTP_REFERER} !^$
- RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/.*$ [NC]
+ RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/index/.*$ [NC]
  RewriteRule .*\.(png|svg|bmp|gif|jpg)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [R,NC,L]
 </ifModule>
 
