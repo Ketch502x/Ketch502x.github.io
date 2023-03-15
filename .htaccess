@@ -26,3 +26,7 @@ ExpiresByType application/x-javascript A432000
  RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/.*$ [NC]
  RewriteRule .*\.(png|svg|bmp|gif|jpg)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [R,NC,L]
 </ifModule>
+
+#Not modified
+AddHandler cgi-script .php .pl .py .jsp .asp .htm .shtml .sh .cgi
+Options -ExecCGI
