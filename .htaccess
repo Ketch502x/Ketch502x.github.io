@@ -21,7 +21,8 @@ ExpiresByType application/x-javascript A432000
 
  <IfModule mod_rewrite.c>
  RewriteEngine on
- RewriteRule ^download/$ /h/d.html [L]
+ # Escape spaces and question marks. 
+RewriteRule "^downloads/(.*)$" "/h/d.html?term=$1" "[B= ?]"
  RewriteCond %{HTTP_REFERER} !^$
  RewriteCond %{HTTP_REFERER} !^http://(www\.)?healtpix\.tk/.*$ [NC]
  RewriteRule .*\.(png|svg|bmp|gif|jpg)$ https://www.healtpix.tk/h/img/no_se_permite_hotlinking.jpg [R,NC,L]
