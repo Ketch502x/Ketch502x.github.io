@@ -1,23 +1,17 @@
-const openai = require('openai');
-const api_key = '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';
+const { Configuration, OpenAIApi } = require("openai");
 
-openai.api_key = api_key;
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
-const prompt = 'Hola, ¿cómo estás?';
-const engine = 'text-davinci-002';
-
-async function generateText(prompt, engine) {
-  const response = await openai.completions.create({
-    engine,
-    prompt,
-    max_tokens: 100,
-    n: 1,
-    stop: '\n',
-  });
-  const { choices } = response.data;
-  return choices[0].text.trim();
-}
-
-generateText(prompt, engine).then((text) => {
-  console.log(text);
+const response = await openai.createCompletion({
+  model: "code-davinci-002",
+  prompt: "Use list comprehension to convert this into one line of JavaScript:\n\ndogs.forEach((dog) => {\n    car.push(dog);\n});\n\nJavaScript one line version:",
+  temperature: 0,
+  max_tokens: 60,
+  top_p: 1.0,
+  frequency_penalty: 0.0,
+  presence_penalty: 0.0,
+  stop: [";"],
 });
