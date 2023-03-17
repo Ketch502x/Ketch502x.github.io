@@ -1,5 +1,5 @@
 const openai = require('openai');
-const api_key = '<tu clave de API>';
+const api_key = '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';
 
 openai.api_key = api_key;
 
