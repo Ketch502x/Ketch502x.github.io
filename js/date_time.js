@@ -1,4 +1,3 @@
-document.cookie = 'test=testvalue; expires=Thu, 31 Dec 2029 23:59:59 UTC; path=/'
 function mueveReloj(){
     momentoActual = new Date()
     hora = momentoActual.getHours()
