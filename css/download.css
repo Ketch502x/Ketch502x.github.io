@@ -67,3 +67,20 @@ header{
     transform-origin: left;
     transform: scaleX(1);
 }
+
+.links{
+  margin: 0;
+  top: 9em;
+  left: 1em;
+  position: fixed;
+}
+
+.links a{
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.links h3{
+  color: rgb(14, 59, 0);
+  font-size: 1.7em;
+}
