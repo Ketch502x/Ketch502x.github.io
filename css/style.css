@@ -67,3 +67,7 @@ header{
     transform-origin: left;
     transform: scaleX(1);
 }
+
+.countdown section{
+    color: rgb(9, 33, 241);
+}

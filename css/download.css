@@ -73,9 +73,7 @@ header{
   top: 9em;
   left: 1em;
   position: fixed;
-  border: 1px solid rgba(16, 255, 215, 0.719);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+ 
 }
 
 .links a{
