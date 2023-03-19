@@ -13,6 +13,15 @@
   a{
     color: blue;
   }
+  a:link{
+    color: rgb(0, 0, 117);
+  }
+  a:visited{
+    color: rgb(144, 144, 255);
+  }
+  a:hover{
+    color: aquamarine;
+  }
   /* Navigation links */
   .navbar a {
     float: left;
