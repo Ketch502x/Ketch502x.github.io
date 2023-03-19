@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=SecularOne');
 
 * {
     margin: 0;
@@ -69,5 +70,11 @@ header{
 }
 
 .countdown section{
-    color: rgb(9, 33, 241);
+    color: rgb(253, 0, 0);
+    font-family: 'SecularOne';
+}
+
+.timeout{
+    color: rgb(19, 62, 255);
+    font-family: 'Poppins';
 }
