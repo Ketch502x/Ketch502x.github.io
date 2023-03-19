@@ -4,6 +4,15 @@
     background-color: #333;
   }
   
+  /* Background */
+  body {
+    background: grey;
+  }
+
+  /* Color of links */
+  a{
+    color: blue;
+  }
   /* Navigation links */
   .navbar a {
     float: left;
