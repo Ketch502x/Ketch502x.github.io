@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif
+    font-family: 'Poppins', sans-serif, monospace
 }
 body {
     display: flex;
@@ -61,7 +61,7 @@ header {
 }
 .countdown section {
     color: rgb(253, 0, 0);
-    font-family: 'Secular One'
+    font-family: monospace
 }
 .timeout {
     color: rgb(19, 62, 255);
