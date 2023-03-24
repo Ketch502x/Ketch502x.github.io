@@ -25,9 +25,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 99;
-    border: 2px solid rgba(255, 255, 255, 0.466);
-    border-radius: 2px;
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(2px)
 }
 .logo {
     font-size: 2em;
