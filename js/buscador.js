@@ -1,1 +1,0 @@
-document.getElementById('container').innerHTML += '<center><h1>IS GOOD</h1></center>';

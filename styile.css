@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #400053;
+  }
+  
+  /* Botón de descarga*/
+  .descarga-btn {
+    text-align: center;
+    height: 60px;
+    outline: none;
+    border: none;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    padding: 16px 25px;
+    margin: 80px auto;
+    border-radius: 6px;
+    align-items: center;
+    white-space: nowrap;
+    background: #00b7f8;
+    border-bottom: 4px solid #0045a6;
+    border-radius: 12px;
+    transition: all 0.2s ease 0s;
+  }
+  
+  .descarga-btn:hover {
+    background: #0096f7;
+  }
+  
+  .descarga-btn:active {
+    box-shadow: 1px 1px 1px #777, 0px 0px 30px 0px #00b7f8;
+    border-bottom: 1px solid #0045A6;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 5px #fff;
+    transform: translateY(4px);
+    transition: all 0.1s ease 0s;
+    margin: 80px auto 76px auto;
+  }
+  
+  .descarga-btn.timer {
+    color: rgb(255, 255, 255);
+    background: #00b7f8;
+    transition: none;
+    font-size: 1.6rem;
+    pointer-events: none;
+  }
+  
+  .descarga-btn .icon {
+    font-size: 3rem;
+  }
+  
+  .descarga-btn .text {
+    font-size: 1.5rem;
+    padding-left: 10px;
+  }
+  
+  /*Color de los segundos en la cuenta regresiva*/
+  .descarga-btn.timer b {
+    color: #000000;
+    padding: 0 8px;
+  }
+  
+  /* Título */
+  .titulo {
+    margin-top: 5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    font: normal 48px/normal "Warnes", Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: normal;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  
+  .titulo:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff, 0 0 100px #00ffff;
+  }
