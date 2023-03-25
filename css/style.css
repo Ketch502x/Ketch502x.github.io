@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=Secular One');
+@import url('https://fonts.googleapis.com/css?family=Shadows Into Light');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'Comic Sans MS', sans-serif, monospace
+    font-family: 'Poppins', 'Comic Sans MS', 'Secular One', 'Shadows Into Light' sans-serif, monospace
 }
 body {
     display: flex;
@@ -59,10 +60,12 @@ header {
     transform: scaleX(1)
 }
 .countdown section {
-    color: rgb(253, 0, 0);
-    font-family: monospace
+    color: rgb(184, 197, 0);
+    font-family: 'Shadows Into Light';
+    font-size: 1.3em;
 }
 .timeout {
     color: rgb(19, 62, 255);
-    font-family: 'Poppins'
+    font-family: 'Comic Sans MS';
+    font-size: 1.3em;
 }
