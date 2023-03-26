@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
-    <script src="../js/videos.js"></script>
-    <link rel="stylesheet" href="../css/videos.css">
+    <script src="../js/video.min.js"></script>
+    <link rel="stylesheet" href="../css/video-js.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST SETTINGS</title>
+    <title>Danmachi</title>
 </head>
 <body>
 
-  <iframe id="video" src="https://mega.nz/embed/QCFhGJJK#JDLjV1LQFr5Mv93oVgDxo8HaUvBiotMPML-DNAEHsRs" width="640" height="360" frameborder="0" allowfullscreen></iframe> <br>
-<button onclick="togglePictureInPicture()">Activar PIP</button>
+  <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="../img/danmachi-img.jpg"
+    data-setup="{}"
+  >
+    <source src="../vi/danmachi.mp4" type="video/mp4" />
+    <source src="MY_VIDEO.webm" type="video/webm" />
+    <p class="vjs-no-js">
+      Para ver este video, habilite JavaScript y considere actualizar a un navegador web que
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >soporte de HTML5 video</a
+      >
+    </p>
+
 </body>
 </html>
+
+
