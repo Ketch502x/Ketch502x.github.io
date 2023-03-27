@@ -65,17 +65,17 @@ header {
 }
 .links a {
     text-decoration: none;
-    font-size: 1.1em;
-    color: blue
+    font-size: 1.3em;
+    color: rgb(10, 10, 10)
 }
 .links a:hover {
-    color: rgb(81, 255, 255)
+    color: rgb(0, 0, 0)
 }
 .links a:visited {
-    color: rgb(114, 111, 255)
+    color: rgb(0, 0, 0)
 }
 .links h3 {
-    color: rgb(11, 46, 0);
+    color: rgb(136, 185, 103);
     font-size: 1.7em
 }
 
