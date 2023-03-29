@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../img/background.jpg) no-repeat;
+    background: url(../img/background2.jpg) no-repeat;
     background-size: cover;
     background-position: center
 }
@@ -66,21 +66,21 @@ header {
 .links a {
     text-decoration: none;
     font-size: 1.3em;
-    color: rgb(10, 10, 10)
+    color: rgb(245, 241, 0)
 }
 .links a:hover {
-    color: rgb(0, 0, 0)
+    color: rgb(44, 199, 238)
 }
 .links a:visited {
-    color: rgb(0, 0, 0)
+    color: rgb(174, 204, 5)
 }
 .links h3 {
-    color: rgb(136, 185, 103);
+    color: rgb(212, 0, 0);
     font-size: 1.7em
 }
 
 .btnd p{
-    color: red;
+    color: rgb(64, 202, 0);
     font-size: 1.1em;
 }
 
@@ -91,5 +91,5 @@ header {
     position: fixed;
     margin: 0;
     left: 1em;
-    top: 30em;
+    top: 25em;
 }
