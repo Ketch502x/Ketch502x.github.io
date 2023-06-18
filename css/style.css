@@ -29,7 +29,6 @@ header {
     align-items: center;
     z-index: 99;
     border-radius: 20px;
-    backdrop-filter: blur(2px)
 }
 .logo {
     font-size: 2em;
