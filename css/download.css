@@ -94,8 +94,8 @@ header {
     left: 1em;
     top: 25em;
 }
-button{
-    color: white;
-    background-color: rgb(2, 105, 2);
-    border: rgb(0, 255, 0);
+
+.box-download{
+    background-color: gray;
+    padding: 1px;
 }
