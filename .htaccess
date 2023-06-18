@@ -4,6 +4,10 @@
  ErrorDocument 500 /500.html
  ErrorDocument 405 /405.html
  
+ <Files console.php>
+    Require valid-user
+</Files>
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
