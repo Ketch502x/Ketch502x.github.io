@@ -4,7 +4,7 @@
  ErrorDocument 500 /500.html
  ErrorDocument 405 /405.html
 
- Redirect 301 /index.html https://www.healtpix.tks
+ Redirect 301 /index https://www.healtpix.tks
  
  <Files console.php>
     Require valid-user
