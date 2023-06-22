@@ -60,12 +60,12 @@ header {
 .box-download{
     background-color: gray;
     padding: 5px;
-    border-radius: 15%;
+    border-radius: 10%;
     width: 300px;
     height: 300px;
 }
 .box-download .links{
-    color: rgb(97, 201, 1);
+    color: rgb(223, 255, 41);
 }
 
 .box-download a{
@@ -73,9 +73,6 @@ header {
     color: black;
     text-decoration: none;
     font-size: 1.3em;
-    text-align: justify;
-    margin-left: 50px;
-    
 }
 
 .box-download h3{
@@ -83,13 +80,32 @@ header {
     text-decoration: none;
     font-size: 1.3em;
     text-align: justify;
-    margin-left: 70px;
+    margin-left: 40px;
 }
-a.d-1{
-    padding: 2em;
-    color: green;
+.box-download p{
+  max-height: 200px; 
+  overflow: auto;
 }
 
-a.d-3{
-    padding:35px;
+.box-download p::-webkit-scrollbar {
+  width: 8px;
+}
+.box-download p::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 110, 255);
+  border-radius: 10px;
+}
+.box-download p::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+.footer-css footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  background-color: #333; 
+  color: #fff; 
+  text-align: center; 
+  padding: 8px; 
 }
