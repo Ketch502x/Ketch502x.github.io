@@ -3,7 +3,7 @@ function cambiarFondoImagen(url) {
   const bgImageElement = document.querySelector(".bg-image");
   bgImageElement.style.backgroundImage = "url('" + url + "')";
 }
-if (_0x149B0 <= 0) {
+if (_$_2f58 <= 0) {
   clearInterval(intervalId);
   cambiarFondoImagen("../img/christmas.jpg");
 }
