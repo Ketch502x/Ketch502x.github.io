@@ -11,7 +11,7 @@ function DownloadFromUrl(fileURL, fileName) {
     "¡Vale!",
     "¡Ultima version!",
     "Una pequeña lista de versiones.",
-    "selecciona tu version favorita."
+    "Selecciona tu version favorita."
 ];
 
 function ChangeTxt() {
