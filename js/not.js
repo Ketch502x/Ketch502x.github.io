@@ -18,7 +18,7 @@ function mostrarNotificacion() {
                     body: '¡Hay una nueva versión!',
                     icon: '../img/mc-logo.jpg' 
                 };
-                var notificacion = new Notification('Nueva versión', options);
+                var notificacion = new Notification('Version 1.20', options);
                 
                 
                 notificacion.onclick = function(event) {
