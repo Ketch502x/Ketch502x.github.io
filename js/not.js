@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var lastNotificationTime = localStorage.getItem('lastNotificationTime');
+    var lastNotificationTime = localStorage.getItem('2rVvQHDt@w$p1dneIMU#fF*Q*a4oDqmXsCu#zVD');
     var currentTime = Date.now();
 
     if (!lastNotificationTime || (currentTime - lastNotificationTime) > 3600000) { 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 5000); 
     }
 });
-
+ 
 function mostrarNotificacion() {
     if ('Notification' in window) {
         Notification.requestPermission().then(function (permission) {
