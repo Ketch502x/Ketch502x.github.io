@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
+    min-height: 70vh; 
   }
   /*
   .box-download {
@@ -67,18 +67,10 @@
 }
 
 */
-/* Estilos para el contenedor general */
-.contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
 
-/* Estilos para el div centrado */
 .box-download {
   background-color: #f5f5f5;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   width: 300px;
   max-width: 90%;
@@ -91,9 +83,9 @@
 }
 
 .box-download p {
-  font-size: 1em;
-  line-height: 1.6;
-  max-height: 200px;
+  font-size: 1.3em;
+  line-height: 1.1;
+  max-height: 230px;
   overflow: auto;
 }
 
@@ -104,7 +96,7 @@
   color: #fff;
   text-align: center;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
   border-radius: 5px;
   transition: background-color 0.2s;
 }
@@ -123,4 +115,28 @@
   color: #fff;
   text-align: center;
   padding: 8px;
+}
+
+.search-container {
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+#searchInput {
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#resultsList {
+  list-style: none;
+  padding: 0;
+}
+
+#resultsList li {
+  transition: opacity 0.9s ease-in-out;
 }
