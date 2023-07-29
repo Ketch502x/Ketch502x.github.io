@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads</title>
+    <script src="../js/js.delay-click.js"></script>
+    <link rel="stylesheet" href="../css/home.style.css">
+    <link rel="stylesheet" href="../css/all.min.css" />
     <script src="../js/download.js"></script>
     <link rel="stylesheet" href="../css/download.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANIME | INDEX</title>
 </head>
-<body class="bg-image">
-    <header><h2 class="logo">Descargas</h2>
-    <nav class="navigation">
-        <a href="/">Inicio</a>
-    </nav>
-</header>
 
-<div class="box-download">
-<nav class="links">
-    <h3><< VERSIONES >></h3>
-    <p>
-    <a class="d-5" href="https://www.mediafire.com/file/7t0iemav3efmt0g/MCPE_1.20.12_OFICIAL_ULTIMA_VERSION.apk/file" target="_blank">Minecraft 1.20.12</a>
-    <br>
-    <br>
-    <a class="d-4" href="https://www.mediafire.com/file/iqvi9le0xre3wzf/MCPE_1.19.71.apk/file" target="_blank">Minecraft 1.x.71</a>
-    <br>
-    <br>
-    <a class="d-3" href="https://www.mediafire.com/file/1fzgm231mk5vk3z/MCPE_1.19.70.apk/file" target="_blank">Minecraft 1.x.70</a>
-    <br>
-    <br>
-    <a class="d-2" href="https://www.mediafire.com/file/mxyz6hcyym329ic/MCPE_1.19.50.apk/file" target="_blank">Minecraft 1.x.50</a>
-    <br>
-    <br>
-    <a class="d-1" href="https://www.mediafire.com/file/506l8cufu8a0y5o/MCPE_1.19.51.apk/file" target="_blank">Minecraft 1.19.51</a>
-    </p>
-</nav>
-</div>
-<div class="footer-css">
-  <footer>
-    <span id="random">OK</span>
-  </footer>
-</div>
+<body>
+    <header>
+        <div class="navigation">
+            <ul>
+                <li class="list active">
+                    <a href="#" onclick="redirigirDespuesDeRetraso('/')">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Inicio</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </header>
+    <script src="../js/js.movement.js"></script>
+
+    <div class="contenedor">
+    <div class="box-download">
+        <nav class="links">
+            <h3><< VERSIONES >></h3>
+            <p>
+            <a class="d-5" href="https://www.mediafire.com/file/7t0iemav3efmt0g/MCPE_1.20.12_OFICIAL_ULTIMA_VERSION.apk/file" target="_blank">Minecraft 1.20.12</a>
+            <br>
+            <br>
+            <a class="d-4" href="https://www.mediafire.com/file/iqvi9le0xre3wzf/MCPE_1.19.71.apk/file" target="_blank">Minecraft 1.x.71</a>
+            <br>
+            <br>
+            <a class="d-3" href="https://www.mediafire.com/file/1fzgm231mk5vk3z/MCPE_1.19.70.apk/file" target="_blank">Minecraft 1.x.70</a>
+            <br>
+            <br>
+            <a class="d-2" href="https://www.mediafire.com/file/mxyz6hcyym329ic/MCPE_1.19.50.apk/file" target="_blank">Minecraft 1.x.50</a>
+            <br>
+            <br>
+            <a class="d-1" href="https://www.mediafire.com/file/506l8cufu8a0y5o/MCPE_1.19.51.apk/file" target="_blank">Minecraft 1.19.51</a>
+            </p>
+        </nav>
+        </div>
+        </div>
+        <div class="footer-css">
+          <footer>
+            <span id="random">OK</span>
+          </footer>
+        </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
