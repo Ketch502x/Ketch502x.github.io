@@ -4,7 +4,8 @@ const data = [
     "1.19.71",
     "1.19.70",
     "1.19.51",
-    "1.19.50"
+    "1.19.50",
+    "1.14.30"
 ];
 
 const searchInput = document.getElementById("searchInput");
