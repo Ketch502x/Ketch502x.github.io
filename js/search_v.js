@@ -1,5 +1,6 @@
 // Datos de ejemplo, puedes reemplazarlos con tu propia lista o fuente de datos
 const data = [
+    "1.20.15",
     "1.20.12",
     "1.19.71",
     "1.19.70",
