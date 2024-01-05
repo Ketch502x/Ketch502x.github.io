@@ -1,5 +1,5 @@
 var time = [
-  "01/1/2024 12:00 PM",
+  "01/1/2025 12:00 PM",
   "span#days",
   "querySelector",
   "span#hours",
@@ -41,7 +41,7 @@ function cambiarFondoImagen(url) {
   const bgImageElement = document.querySelector(".bg-image");
   bgImageElement.style.backgroundImage = "url('" + url + "')";
 }
-if (time <= 0) {
+if (time = 0) {
   clearInterval(intervalId);
   cambiarFondoImagen("../img/christmas.jpg");
 }
