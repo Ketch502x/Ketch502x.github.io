@@ -1,5 +1,5 @@
 var time = [
-  "24/12/2025 11:59 PM",
+  "12/24/2025 11:59 PM",
   "span#days",
   "querySelector",
   "span#hours",
