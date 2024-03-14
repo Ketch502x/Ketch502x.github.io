@@ -1,0 +1,23 @@
+{
+  "short_name": "Flappy Bird",
+  "name": "Free Flappy Bird",
+  "description": "Play the classic Flappy Bird game instantly. No fuss.",
+  "icons": [
+	{
+	  "src": "images/flappy-bird-game-icon-192.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+  {
+    "src": "images/flappy-bird-game-icon-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }
+  ],
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "background_color": "#0e0e0e",
+  "theme_color": "#0e0e0e",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
