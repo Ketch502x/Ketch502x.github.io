@@ -1,7 +1,7 @@
 {
   "short_name": "Pacman",
   "name": "Free Pacman",
-  "description": "Play classic Pacman. No fuss. 100% free.",
+  "description": "Play classic",
   "icons": [
 	{
 	  "src": "images/pacman-game-icon-192.png",

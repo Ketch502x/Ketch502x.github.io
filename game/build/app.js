@@ -2368,7 +2368,7 @@ class GameCoordinator {
     this.removeTimer({ detail: { timer: this.endIdleTimer } });
     this.removeTimer({ detail: { timer: this.ghostFlashTimer } });
 
-    const imgBase = "./app/style//graphics/spriteSheets/maze/";
+    const imgBase = "./app/style/graphics/spriteSheets/maze/";
 
     new Timer(() => {
       this.ghosts.forEach((ghost) => {

@@ -41,6 +41,21 @@
         margin: 0 auto;
       }
 
+      #customContextMenu {
+        position: absolute;
+        background-color: #2600ff;
+        color: #fbff00;
+        border-radius: 30px;
+        padding: 10px;
+        z-index: 1000;
+        display: none;
+      }
+
+      #customContextMenu a {
+        color: #ea00ff;
+        text-decoration: underline;
+      }
+
       /* Estilo general del scrollbar */
       ::-webkit-scrollbar {
         width: 10px; /* Ancho del scrollbar */
@@ -68,7 +83,25 @@
         </p>
       </div>
     </main>
-
     <footer>&copy; HEALTPIX Disponible: 20-03-2024</footer>
+    <div id="customContextMenu">
+      Haz clic <a href="/game/pacman.html">aquí</a> para jugar.
+    </div>
+    <script>
+      window.onload = function () {
+        var customContextMenu = document.getElementById("customContextMenu");
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault(); // Evita el comportamiento predeterminado del clic derecho
+          customContextMenu.style.left = e.pageX + "px"; // Posición horizontal del comentario
+          customContextMenu.style.top = e.pageY + "px"; // Posición vertical del comentario
+          customContextMenu.style.display = "block"; // Muestra el comentario
+        });
+
+        // Ocultar el comentario cuando se hace clic en otro lugar de la página
+        document.addEventListener("click", function () {
+          customContextMenu.style.display = "none";
+        });
+      };
+    </script>
   </body>
 </html>
