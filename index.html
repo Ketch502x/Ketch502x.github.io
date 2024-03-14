@@ -1,107 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <script src="./js/js.delay-click.js"></script>
+    <link rel="stylesheet" href="./css/home.style.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mantenimiento</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f3f3f3;
-        color: #333;
-        text-align: center;
-        padding-top: 100px;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      footer {
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      main {
-        flex: 1;
-      }
-      p {
-        font-size: 18px;
-      }
-
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      #customContextMenu {
-        position: absolute;
-        background-color: #2600ff;
-        color: #fbff00;
-        border-radius: 30px;
-        padding: 10px;
-        z-index: 1000;
-        display: none;
-      }
-
-      #customContextMenu a {
-        color: #ea00ff;
-        text-decoration: underline;
-      }
-
-      /* Estilo general del scrollbar */
-      ::-webkit-scrollbar {
-        width: 10px; /* Ancho del scrollbar */
-      }
-
-      /* Estilo del thumb (la barra de desplazamiento en sí misma) */
-      ::-webkit-scrollbar-thumb {
-        background-color: #888; /* Color del thumb */
-        border-radius: 5px; /* Radio de borde del thumb */
-      }
-
-      /* Estilo del track (la pista por la que se desplaza el thumb) */
-      ::-webkit-scrollbar-track {
-        background-color: #f1f1f1; /* Color del track */
-      }
-    </style>
+    <title>Inicio</title>
   </head>
-  <body>
-    <main>
-      <div class="container">
-        <h1>¡Sitio en Mantenimiento!</h1>
-        <p>
-          Se está realizando algunas actualizaciones en el sitio web. Lamento
-          los inconvenientes. Por favor, vuelve a visitar más tarde.
-        </p>
-      </div>
-    </main>
-    <footer>&copy; HEALTPIX Disponible: 20-03-2024</footer>
-    <div id="customContextMenu">
-      Haz clic <a href="/game/pacman.html">aquí</a> para jugar.
-    </div>
-    <script>
-      window.onload = function () {
-        var customContextMenu = document.getElementById("customContextMenu");
-        document.addEventListener("contextmenu", function (e) {
-          e.preventDefault(); // Evita el comportamiento predeterminado del clic derecho
-          customContextMenu.style.left = e.pageX + "px"; // Posición horizontal del comentario
-          customContextMenu.style.top = e.pageY + "px"; // Posición vertical del comentario
-          customContextMenu.style.display = "block"; // Muestra el comentario
-        });
 
-        // Ocultar el comentario cuando se hace clic en otro lugar de la página
-        document.addEventListener("click", function () {
-          customContextMenu.style.display = "none";
-        });
-      };
-    </script>
+  <body class="bg-img">
+    <header>
+      <div class="navigation">
+        <ul>
+          <li class="list active">
+            <a href="#" onclick="redirigirDespuesDeRetraso('/')">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Inicio</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" onclick="redirigirDespuesDeRetraso('es/descargas')">
+              <span class="icon">
+                <ion-icon name="download-outline"></ion-icon>
+              </span>
+              <span class="text">Descargas</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" onclick="redirigirDespuesDeRetraso('es/games')">
+              <span class="icon">
+                <ion-icon name="game-controller-outline"></ion-icon>
+              </span>
+              <span class="text">Juegos</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </header>
+    <script src="./js/js.movement.js"></script>
+
+    <div class="countdown">
+      <p class="timeout">Tiempo restante:</p>
+      <section>
+        <p>
+          <span id="days"></span> días <span id="hours"></span> horas
+          <span id="minutes"></span> minutos <span id="seconds"></span> segundos
+        </p>
+      </section>
+      <script src="./js/date_time.js"></script>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
