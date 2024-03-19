@@ -190,7 +190,7 @@ body {
   padding: 8px;
 }
 
-.dwapp {
+#dwapp {
   cursor: pointer;
   text-align: center;
   background-color: #dfdfdf;
@@ -201,7 +201,7 @@ body {
   margin: 0 auto; 
 }
 
-.dwapp a{
+#dwapp a{
   color: rgb(140, 0, 255);
   text-decoration: none;
   font-size: 20px;
