@@ -190,6 +190,23 @@ body {
   padding: 8px;
 }
 
+.dwapp {
+  cursor: pointer;
+  text-align: center;
+  background-color: #dfdfdf;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto; 
+}
+
+.dwapp a{
+  color: rgb(140, 0, 255);
+  text-decoration: none;
+  font-size: 20px;
+}
+
 @media (max-width: 767px) {
   .countdown {
     max-width: 90%; 
