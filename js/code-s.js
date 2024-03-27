@@ -43,7 +43,7 @@ document
 
         setTimeout(function () {
           toast.classList.remove("show");
-        }, 1000); // Oculta el mensaje después de 1 segundo
+        }, 2000); // Oculta el mensaje después de 1 segundo
 
         // Redirige después de mostrar el "Toast"
         setTimeout(function () {
