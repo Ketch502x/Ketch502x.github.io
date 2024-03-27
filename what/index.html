@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        transition: background-color 0.5s ease-out; /* Transición más rápida para que los cambios de color sean más perceptibles */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        var audio = new Audio("/download/src/music/cat.mp3");
+        audio.play();
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        var analyser = audioCtx.createAnalyser();
+        var source = audioCtx.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+
+        analyser.fftSize = 256;
+        var bufferLength = analyser.frequencyBinCount;
+        var dataArray = new Uint8Array(bufferLength);
+
+        function updateBackground() {
+          requestAnimationFrame(updateBackground);
+          analyser.getByteFrequencyData(dataArray);
+
+          var maxAmplitude = Math.max.apply(null, dataArray);
+          var threshold = 150; // Puedes ajustar este valor según tus necesidades
+
+          if (maxAmplitude > threshold) {
+            var hue = Math.random() * 360; // Genera un valor de matiz (hue) aleatorio
+            document.body.style.backgroundColor = "hsl(" + hue + ", 70%, 80%)"; // Cambia el color de fondo utilizando HSL
+          }
+        }
+
+        updateBackground();
+      };
+    </script>
+  </body>
+</html>
