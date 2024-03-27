@@ -59,7 +59,7 @@ document
 
         setTimeout(function () {
           toast.classList.remove("show");
-        }, 2000); // Oculta el mensaje después de 2 segundos
+        }, 2500); // Oculta el mensaje después de 2 segundos
       }
     } else {
       var toast = document.getElementById("toast");
@@ -72,6 +72,6 @@ document
 
       setTimeout(function () {
         toast.classList.remove("show");
-      }, 2000); // Oculta el mensaje después de 2 segundos
+      }, 2500); // Oculta el mensaje después de 2 segundos
     }
   });
