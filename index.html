@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="/css/s.search.css" />
     <script src="./js/js.delay-click.js"></script>
     <link rel="stylesheet" href="./css/home.style.css" />
     <link rel="stylesheet" href="./css/all.min.css" />
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
   </head>
-  <body class="bg-img"> 
+  <body class="bg-img">
     <header>
       <div class="navigation">
         <ul>
@@ -67,5 +68,31 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <footer>
+      <form id="codeForm">
+        <label for="codeInput">Introduce un código de 6 dígitos:</label>
+        <input
+          type="text"
+          id="codeInput"
+          name="codeInput"
+          pattern="[0-9]{3}-[0-9]{3}"
+          placeholder="000-000"
+          maxlength="7"
+          required
+          title="Por favor, ingresa un codigo de 6 dígitos. Mas info <a href='/info.html'>aquí</a>."
+        />
+        <!--<button type="submit">Enviar</button>-->
+      </form>
+
+      <div class="toast" id="toast"></div>
+      <br />
+      <a
+        href="/info.html"
+        style="color: #415872; text-decoration: none; font-weight: bold"
+        >Información de la página</a
+      >
+
+      <script src="/js/code-s.js"></script>
+    </footer>
   </body>
 </html>
