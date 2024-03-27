@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cat Sound</title>
     <style>
       body {
         transition: background-color 0.5s ease-out; /* Transición más rápida para que los cambios de color sean más perceptibles */
@@ -21,7 +21,7 @@
         source.connect(analyser);
         analyser.connect(audioCtx.destination);
 
-        analyser.fftSize = 256;
+        analyser.fftSize = 1024;
         var bufferLength = analyser.frequencyBinCount;
         var dataArray = new Uint8Array(bufferLength);
 
@@ -34,7 +34,10 @@
 
           if (maxAmplitude > threshold) {
             var hue = Math.random() * 360; // Genera un valor de matiz (hue) aleatorio
-            document.body.style.backgroundColor = "hsl(" + hue + ", 70%, 80%)"; // Cambia el color de fondo utilizando HSL
+            var saturation = "100%"; // Máxima saturación para colores vibrantes
+            var lightness = "50%"; // Luminosidad media para que los colores sean más visibles
+            document.body.style.backgroundColor =
+              "hsl(" + hue + ", " + saturation + ", " + lightness + ")"; // Cambia el color de fondo utilizando HSL
           }
         }
 
