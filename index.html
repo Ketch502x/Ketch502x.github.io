@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <audio id="successSound" src="/download/src/music/succes.mp3"></audio>
+    <audio id="successSound" src="/download/src/music/error.mp3"></audio>
+    <audio id="successSound" src="/download/src/music/error2.mp3"></audio>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <link rel="stylesheet" href="/css/s.search.css" />
     <script src="./js/js.delay-click.js"></script>
@@ -75,7 +78,6 @@
           type="text"
           id="codeInput"
           name="codeInput"
-          pattern="[0-9]{3}-[0-9]{3}"
           placeholder="000-000"
           maxlength="7"
           required

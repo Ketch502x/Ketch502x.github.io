@@ -35,6 +35,11 @@ document
         var toast = document.getElementById("toast");
         toast.innerText = "¡Lo lograste!";
         toast.classList.add("show");
+
+        // Reproduce el sonido de éxito
+        var successSound = new Audio("download/src/music/success.mp3");
+        successSound.play();
+
         setTimeout(function () {
           toast.classList.remove("show");
         }, 1000); // Oculta el mensaje después de 1 segundo
@@ -47,6 +52,11 @@ document
         var toast = document.getElementById("toast");
         toast.innerText = "Código incorrecto";
         toast.classList.add("show");
+
+        // Reproduce el sonido de error
+        var errorSound = new Audio("download/src/music/error.mp3");
+        errorSound.play();
+
         setTimeout(function () {
           toast.classList.remove("show");
         }, 2000); // Oculta el mensaje después de 2 segundos
@@ -55,6 +65,11 @@ document
       var toast = document.getElementById("toast");
       toast.innerText = "El código debe tener exactamente 6 dígitos";
       toast.classList.add("show");
+
+      // Reproduce el sonido de error
+      var errorSound = new Audio("download/src/music/error2.mp3");
+      errorSound.play();
+
       setTimeout(function () {
         toast.classList.remove("show");
       }, 2000); // Oculta el mensaje después de 2 segundos
