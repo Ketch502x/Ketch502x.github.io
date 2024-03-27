@@ -67,8 +67,8 @@ document
       toast.classList.add("show");
 
       // Reproduce el sonido de error
-      var errorSound = new Audio("download/src/music/error2.mp3");
-      errorSound.play();
+      var errorSound2 = new Audio("download/src/music/error2.mp3");
+      errorSound2.play();
 
       setTimeout(function () {
         toast.classList.remove("show");
