@@ -26,8 +26,8 @@ document
         202403: "/es/games",
         202402: "/es/old_games",
         202034: "/es/afinator",
-        101004: "/p/e",
-        100000:"/what",
+        101004: "/es",
+        100000: "/what",
         // Agrega más códigos y URLs según tus necesidades
       };
 
