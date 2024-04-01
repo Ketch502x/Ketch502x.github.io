@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="../js/js.delay-click.js"></script>
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.game.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+  </head>
+  <body class="bg-img">
+    <header>
+      <div class="navigation">
+        <ul>
+          <li class="list active">
+            <a href="#" onclick="redirigirDespuesDeRetraso('/')">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Inicio</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#" onclick="redirigirDespuesDeRetraso('es/descargas')">
+              <span class="icon">
+                <ion-icon name="download-outline"></ion-icon>
+              </span>
+              <span class="text">Descargas</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </header>
+    <script src="../js/js.movement.js"></script>
+    <main>
+      <div class="list">
+        <div class="pacman">
+          <a href="/game/pacman.html"
+            ><img
+              id="pacman-logo"
+              src="../game/app/style/graphics/pacman_logo.png"
+              alt="pacman"
+          /></a>
+        </div>
+        <div class="flappy">
+          <a href="/game/flappybird.html"
+            ><img
+              id="flappy-logo"
+              src="../game/app/style/graphics/flappy-bird-game-logo-180.png"
+              alt="flappy"
+          /></a>
+        </div>
+      </div>
+    </main>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

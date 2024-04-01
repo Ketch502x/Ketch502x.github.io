@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Sound</title>
+    <style>
+      body {
+        transition: background-color 0.5s linear; /* Transición más rápida para que los cambios de color sean más perceptibles */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        var audio = new Audio("/download/src/music/cat.mp3");
+        audio.play();
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        var analyser = audioCtx.createAnalyser();
+        var source = audioCtx.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+
+        analyser.fftSize = 4096;
+        var bufferLength = analyser.frequencyBinCount;
+        var dataArray = new Uint8Array(bufferLength);
+
+        function updateBackground() {
+          requestAnimationFrame(updateBackground);
+          analyser.getByteFrequencyData(dataArray);
+
+          var maxAmplitude = Math.max.apply(null, dataArray);
+          var threshold = 150; // Puedes ajustar este valor según tus necesidades
+
+          if (maxAmplitude > threshold) {
+            var hue = Math.random() * 360; // Genera un valor de matiz (hue) aleatorio
+            var saturation = "100%"; // Máxima saturación para colores vibrantes
+            var lightness = "10%"; // Luminosidad media para que los colores sean más visibles
+            document.body.style.backgroundColor =
+              "hsl(" + hue + ", " + saturation + ", " + lightness + ")"; // Cambia el color de fondo utilizando HSL
+          }
+        }
+
+        updateBackground();
+      };
+    </script>
+  </body>
+</html>
