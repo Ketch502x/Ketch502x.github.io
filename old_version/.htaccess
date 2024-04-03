@@ -5,16 +5,6 @@
  ErrorDocument 500 /500.html
  ErrorDocument 405 /405.html
 
- #maintenance
- # Activar redireccionamiento
-RewriteEngine on
-
-# Redireccionar a la página de mantenimiento
-RewriteCond %{REQUEST_URI} !/maintenance.html$
-RewriteRule $ /maintenance.html [R=503,L]
- 
-
-
 #HTML
  <IfModule mod_rewrite.c >
 RewriteEngine on

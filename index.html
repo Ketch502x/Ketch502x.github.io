@@ -1,47 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maintenance</title>
+    <title>Redirigiendo</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #282c34; /* Dark Blue */
-        color: #ffffff; /* White */
+      * {
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        text-align: center;
+        box-sizing: border-box;
       }
 
-      h1 {
-        font-size: 3rem;
-        color: #6b47dc; /* Purple */
-        margin-bottom: 20px;
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: black;
       }
 
       p {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
+        background-color: transparent;
+        text-align: center;
+        font-size: 20px;
+        color: white;
       }
 
-      a {
-        color: #7b68ee; /* Violet */
-        text-decoration: none;
+      .container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container .ring {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: -30px;
+        border-radius: 50%;
+        border: 4px solid transparent;
+        border-top: 4px solid #24ecff;
+        animation: animate 4s linear infinite;
+      }
+
+      .container .ring::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: #24ecff;
+        box-shadow: 0 0 0 5px #24ecff33, 0 0 0 10px #24ecff22,
+          0 0 0 20px #24ecff11, 0 0 20px #24ecff, 0 0 50px #24ecff;
+      }
+
+      .container .ring:nth-child(2) {
+        animation: animate2 4s linear infinite;
+        animation-delay: -1s;
+        border-top: 4px solid transparent;
+        border-left: 4px solid #93ff2d;
+      }
+
+      .container .ring:nth-child(2)::before {
+        content: "";
+        position: absolute;
+        top: initial;
+        top: 12px;
+        left: 12px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: #93ff2d;
+        box-shadow: 0 0 0 5px #93ff2d33, 0 0 0 10px #93ff2d22,
+          0 0 0 20px #24ecff11, 0 0 20px #93ff2d, 0 0 50px #93ff2d;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes animate2 {
+        0% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      .container .ring:nth-child(3) {
+        animation: animate2 4s linear infinite;
+        animation-delay: -3s;
+        position: absolute;
+        top: -66.66px;
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-width: 4px solid transparent;
+        border-left: 4px solid #e41cf8;
+      }
+
+      .container .ring:nth-child(3)::before {
+        content: "";
+        position: absolute;
+        top: initial;
+        top: 12px;
+        left: 12px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: #e41cf8;
+        box-shadow: 0 0 0 5px #e41cf833, 0 0 0 10px #e41cf822,
+          0 0 0 20px #e41cf811, 0 0 20px #e41cf8, 0 0 50px #e41cf8;
+      }
+
+      .container p {
+        position: absolute;
+        color: #fff;
+        font-size: 1.5em;
+        font-family: cosolas;
+        bottom: -80px;
+        letter-spacing: 0.15em;
       }
     </style>
+    <script>
+      // Función para obtener el idioma del navegador del usuario
+      function obtenerIdiomaUsuario() {
+        return navigator.language || navigator.userLanguage;
+      }
+
+      // Función para redirigir según el idioma del usuario
+      function redirigirSegunIdioma() {
+        var idioma = obtenerIdiomaUsuario().toLowerCase();
+        var destino = "";
+        switch (true) {
+          case idioma.startsWith("es"):
+            destino = "/static/es/"; // Redirigir a la página en español
+            break;
+          case idioma.startsWith("en"):
+            destino = "/static/en/"; // Redirigir a la página en inglés
+            break;
+          case idioma.startsWith("ja"):
+            destino = "/static/ja/"; // Redirigir a la página en japonés
+            break;
+          case idioma.startsWith("pt"):
+            destino = "/static/pt/"; // Redirigir a la página en portugués
+            break;
+          default:
+            destino = "/static/en/"; // Redirigir a inglés por defecto si no se reconoce el idioma
+        }
+
+        // Agregar un retardo de 1 segundo antes de redirigir
+        setTimeout(function () {
+          window.location.href = destino;
+        }, 2000);
+      }
+
+      // Redirigir cuando la página cargue
+      window.onload = function () {
+        redirigirSegunIdioma();
+      };
+    </script>
   </head>
   <body>
-    <h1>Maintenance</h1>
-    <p>
-      We are working to improve your experience. Sorry for the inconvenience.
-    </p>
-    <p>This page will be available soon!</p>
-    <p>Some errors have been fixed!</p>
+    <div class="container">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <p class="msgLoad">Loading you language...</p>
+    </div>
   </body>
 </html>
