@@ -175,7 +175,30 @@
       <div class="ring"></div>
       <div class="ring"></div>
       <div class="ring"></div>
-      <p class="msgLoad">Loading you language...</p>
+      <p id="msgLoad" class="msgLoad" >Loading you language...</p>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    const userLanguage = navigator.language || navigator.userLanguage;
+    const loadingText = document.getElementById("msgLoad");
+    switch(userLanguage.substring(0, 2)) {
+      case "ja":
+        loadingText.textContent = "言語を読み込んでいます...";
+        break;
+      case "es":
+        loadingText.textContent = "Cargando idioma...";
+        break;
+      case "pt":
+        loadingText.textContent = "Carregando idioma...";
+        break;
+      default:
+        loadingText.textContent = "Loading language...";
+        break;
+    }
+  }, 500);
+});
+
+    </script>
   </body>
 </html>

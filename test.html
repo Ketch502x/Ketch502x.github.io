@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Language</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #loadingText {
+        font-size: 24px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loadingText">Loading your language...</div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          const userLanguage = navigator.language || navigator.userLanguage;
+          const loadingText = document.getElementById("loadingText");
+          switch (userLanguage.substring(0, 2)) {
+            case "ja":
+              loadingText.textContent = "言語を読み込んでいます...";
+              break;
+            case "es":
+              loadingText.textContent = "Cargando tu idioma...";
+              break;
+            case "pt":
+              loadingText.textContent = "Carregando seu idioma...";
+              break;
+            default:
+              loadingText.textContent = "Loading your language...";
+              break;
+          }
+          setTimeout(function () {
+            window.location.href = "pagina_static.html";
+          }, 2000); // Cambia 2000 por el tiempo en milisegundos que quieras esperar antes de la redirección
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

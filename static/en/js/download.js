@@ -8,10 +8,10 @@ function DownloadFromUrl(fileURL, fileName) {
   }  
 
   var textosCambiantes = [
-    "¡Vale!",
-    "¡Ultima version!",
-    "Una pequeña lista de versiones.",
-    "Selecciona tu version favorita."
+    "¡Okey!",
+    "¡Release version!",
+    "A tiny list of versions.",
+    "Select your version favorite."
 ];
 
 function ChangeTxt() {

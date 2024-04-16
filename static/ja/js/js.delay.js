@@ -1,4 +1,4 @@
-function redirigirDespuesDeRetraso(url) {
+function redirectAfterDelay(url) {
   setTimeout(function () {
     window.location.href = url;
   }, 1500);
