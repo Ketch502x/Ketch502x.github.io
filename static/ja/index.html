@@ -103,5 +103,92 @@
         <li><a href="../pt/">ポルトガル語</a></li>
       </ul>
     </footer>
+    <script>
+      // 通知の許可をリクエストする関数
+      function requestNotificationPermission() {
+        Notification.requestPermission().then(function(result) {
+          if (result === "granted") {
+            // 許可された場合
+            localStorage.setItem("notificationPermission", "granted");
+          } else if (result === "denied") {
+            // 拒否された場合
+            localStorage.setItem("notificationPermission", "denied");
+          }
+        });
+      }
+    
+      // ページ読み込み時に自動的に通知の許可をリクエストする
+      requestNotificationPermission();
+    
+      // ランダムなメッセージと画像を含む通知を表示する関数
+      function showRandomNotification() {
+        // 通知用のランダムなメッセージ
+        const messages = [
+          "ダウンロードセクションがあることを覚えています！",
+          "これはシンプルなページですが、段階的に改善されていきます。詳細についてはクリックしてください！",
+          "おっと、隠れたコードが逃げました！",
+        ];
+    
+        // 通知用のメッセージ
+        const messageNoti = [
+          "リマインダー！",
+          "ページを訪問していただきありがとうございます！",
+          "111111",
+        ];
+    
+        // 通知用の画像パス
+        const imagePath = [
+          "https://th.bing.com/th/id/OIG2.lteBzI0g2i_zhEJeVE8f?w=1024&h=1024&rs=1&pid=ImgDetMain",
+          "https://th.bing.com/th/id/OIG1.1AMIFgJk8uAeFKd54MfM?w=1024&h=1024&rs=1&pid=ImgDetMain",
+          "https://th.bing.com/th/id/OIG3.KXlj0QoGkd7fR_B_nce6?w=1024&h=1024&rs=1&pid=ImgDetMain",
+        ];
+    
+        // 通知クリック時のリダイレクト先
+        const redirectDestinations = ["downloads", "info", "/static/ja"];
+    
+        // ランダムなインデックスを取得
+        const randomIndex = Math.floor(Math.random() * messages.length);
+    
+        // ランダムなインデックスに対応するメッセージ、画像、リダイレクト先を選択する
+        const randomMessage = messages[randomIndex];
+        const randomMessageNoti = messageNoti[randomIndex];
+        const randomImagePath = imagePath[randomIndex];
+        const randomDestination = redirectDestinations[randomIndex];
+    
+        // 通知を作成する
+        const notification = new Notification(randomMessageNoti, {
+          body: randomMessage,
+          icon: randomImagePath,
+        });
+    
+        // 通知がクリックされたときに特定の先にリダイレクトする
+        notification.onclick = function() {
+          // ランダムなリダイレクト先にリダイレクトする
+          window.location.href = randomDestination;
+        };
+      }
+    
+      // 通知の許可が与えられているかどうかを確認する
+      if (localStorage.getItem("notificationPermission") === "granted") {
+        // 5から30秒のランダムなディレイを生成する（ミリ秒単位）
+        const delay = Math.floor(Math.random() * (30000 - 5000 + 1)) + 5000;
+    
+        // ランダムな時間を待ってから通知を表示する
+        setTimeout(showRandomNotification, delay);
+      }
+    
+      // クッキーの値を取得する関数
+      function getCookie(name) {
+        const cookieValue = document.cookie.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)");
+        return cookieValue ? cookieValue.pop() : "";
+      }
+    
+      // 5分または10分ごとに通知を表示する
+      setInterval(
+        showRandomNotification,
+        Math.random() >= 0.5 ? 300000 : 600000
+      );
+    </script>
+    
   </body>
 </html>
