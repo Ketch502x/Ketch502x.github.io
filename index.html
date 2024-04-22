@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Redirigiendo</title>
     <style>
       * {
@@ -175,30 +176,46 @@
       <div class="ring"></div>
       <div class="ring"></div>
       <div class="ring"></div>
-      <p id="msgLoad" class="msgLoad" ></p>
+      <p id="msgLoad" class="msgLoad"></p>
     </div>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-    const userLanguage = navigator.language || navigator.userLanguage;
-    const loadingText = document.getElementById("msgLoad");
-    switch(userLanguage.substring(0, 2)) {
-      case "ja":
-        loadingText.textContent = "言語を読み込んでいます...";
-        break;
-      case "es":
-        loadingText.textContent = "Cargando idioma...";
-        break;
-      case "pt":
-        loadingText.textContent = "Carregando idioma...";
-        break;
-      default:
-        loadingText.textContent = "Loading language...";
-        break;
-    }
-  }, 500);
-});
-</script>
-
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          const userLanguage = navigator.language || navigator.userLanguage;
+          const loadingText = document.getElementById("msgLoad");
+          switch (userLanguage.substring(0, 2)) {
+            case "ja":
+              loadingText.textContent = "言語を読み込んでいます...";
+              break;
+            case "es":
+              loadingText.textContent = "Cargando idioma...";
+              break;
+            case "pt":
+              loadingText.textContent = "Carregando idioma...";
+              break;
+            default:
+              loadingText.textContent = "Loading language...";
+              break;
+          }
+        }, 500);
+      });
+    </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/service-worker.js").then(
+            function (registration) {
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,94 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bienvenido a la página</title>
-<style>
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f8f9fa;
-  padding: 50px;
-  border: 1px solid #adb5bd;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  max-width: 90%;
-  text-align: center;
-  z-index: 9999;
-}
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
-}
-@media(max-width: 768px) {
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-    max-width: 95%;
-  }
-}
-.btn {
-  display: inline-block;
-  font-weight: 400;
-  color: #fff;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  background-color: #6c757d;
-  border: 1px solid #6c757d;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  cursor: pointer;
-  text-decoration: none;
-}
-.btn:hover {
-  color: #fff;
-  background-color: #495057;
-  border-color: #495057;
-}
-</style>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descripción de tu aplicación" />
+    <meta name="theme-color" content="#007bff" />
+    <title>Mi Aplicación</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <style>
+      /* Estilos adicionales para la UI de tu aplicación */
+    </style>
+  </head>
+  <body>
+    <!-- Contenido de tu aplicación -->
+    <h1>JAJAJA te voy a hackear</h1>
 
-<div id="popup" class="popup">
-  <h2>Bienvenido a la página</h2>
-  <p>¡Gracias por visitarnos!</p>
-  <button class="btn" onclick="closePopup()">Cerrar</button>
-</div>
-
-<div id="overlay" class="overlay"></div>
-
-<script>
-// Verificar si ya se ha mostrado el popup
-if (!localStorage.getItem('popupShow')) {
-  document.getElementById('popup').style.display = 'block';
-  document.getElementById('overlay').style.display = 'block';
-  
-  // Marcar que el popup ha sido mostrado
-  localStorage.setItem('popupShow', 'true');
-}
-
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-  document.getElementById('overlay').style.display = 'none';
-}
-</script>
-
-</body>
+    <!-- Scripts para registrar el Service Worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/service-worker.js").then(
+            function (registration) {
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+        });
+      }
+    </script>
+  </body>
 </html>
