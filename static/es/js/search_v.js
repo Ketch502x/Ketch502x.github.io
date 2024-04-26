@@ -1,48 +1,60 @@
-// Datos de ejemplo, puedes reemplazarlos con tu propia lista o fuente de datos
-const data = [
-    "1.20.15",
-    "1.20.12",
-    "1.19.71",
-    "1.19.70",
-    "1.19.51",
-    "1.19.50",
-    "1.14.30"
-];
-
-const searchInput = document.getElementById("searchInput");
-const resultsList = document.getElementById("resultsList");
-const versionLinks = document.querySelectorAll(".links a");
-
-function search() {
-    const searchTerm = searchInput.value.toLowerCase();
-    if (searchTerm === "") {
-        resetResults();
-    } else {
-        const filteredData = data.filter(item => versionMatchesSearchTerm(item, searchTerm));
-        displayResults(filteredData);
+// Función para cargar los datos desde el archivo JSON
+async function cargarDatos() {
+    try {
+        const response = await fetch('links.json');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error al cargar los datos:', error);
+        return [];
     }
 }
 
-function versionMatchesSearchTerm(version, searchTerm) {
-    // Escapar caracteres especiales para que no afecten la expresión regular
-    const escapedSearchTerm = searchTerm.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(escapedSearchTerm, 'i'); // 'i' para que sea insensible a mayúsculas/minúsculas
-    return regex.test(version);
-}
+// Datos de ejemplo: lista de archivos disponibles
+let archivos = [];
 
-function displayResults(results) {
-    versionLinks.forEach(link => {
-        const versionText = link.textContent.toLowerCase();
-        const isVisible = results.some(version => versionText.includes(version));
-        link.style.display = isVisible ? "block" : "none";
+// Función para mostrar la lista de archivos filtrados por la búsqueda
+function mostrarArchivos(resultados) {
+    const fileList = document.getElementById('fileList');
+    fileList.innerHTML = ''; // Limpiar la lista antes de mostrar los archivos
+
+    resultados.forEach(archivo => {
+        const item = document.createElement('div');
+        item.classList.add('fileItem');
+        const link = document.createElement('a');
+        link.textContent = archivo.nombre;
+        link.href = archivo.enlace;
+        link.setAttribute('download', ''); // Agregar el atributo de descarga
+        link.id = 'link' /*+ archivo.nombre.toLowerCase().replace(/\s+/g, '-')*/; // Agregar un ID único
+        item.appendChild(link);
+        fileList.appendChild(item);
     });
 }
 
-function resetResults() {
-    versionLinks.forEach(link => {
-        link.style.display = "block";
-    });
+
+
+// Función para manejar el evento de búsqueda
+function handleSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.trim();
+
+    const resultados = filtrarArchivos(query);
+
+    mostrarArchivos(resultados);
 }
 
-// Evento para detectar cambios en el input de búsqueda
-searchInput.addEventListener("input", search);
+// Filtrar archivos según la búsqueda
+function filtrarArchivos(consulta) {
+    return archivos.filter(archivo =>
+        archivo.nombre.toLowerCase().includes(consulta.toLowerCase())
+    );
+}
+
+// Mostrar todos los archivos al cargar la página inicialmente
+document.addEventListener('DOMContentLoaded', async () => {
+    archivos = await cargarDatos();
+    mostrarArchivos(archivos); // Mostrar todos los archivos
+});
+
+// Manejar el evento de búsqueda al escribir en el input
+document.getElementById('searchInput').addEventListener('input', handleSearch);

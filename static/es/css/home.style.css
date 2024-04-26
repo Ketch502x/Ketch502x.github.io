@@ -8,24 +8,6 @@
   font-family: sans-serif;
 }
 
-.flag-es {
-  background-position: left 4.2229%;
-}
-
-.flag {
-  width: 18px;
-  height: 11px;
-  background-image: url(/assets/img/freakflags.png);
-  background-repeat: no-repeat;
-  background-size: 100% 49494%;
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  vertical-align: middle;
-  box-sizing: content-box;
-  box-shadow: 0 0 0 1px #f0f0f0;
-}
-
 :root {
   --crl: #222327;
 }

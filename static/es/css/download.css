@@ -91,13 +91,13 @@
 
 .box-download a {
   display: block;
-  padding: 10px;
+  padding: 30px;
   background-color: #3498db;
   color: #fff;
   text-align: center;
   text-decoration: none;
   margin-bottom: -10px;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.2s;
 }
 
