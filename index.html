@@ -208,6 +208,37 @@
         }, 200);
       });
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  // Función para obtener la dirección IP del usuario
+  async function getUserIP() {
+    // Utiliza un servicio externo para obtener la IP del usuario
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip;
+  }
+
+  // Función para enviar la IP al servidor
+  async function sendIPToServer(ip) {
+    // URL del servidor para enviar la IP
+    const serverUrl = 'https://3abd-181-174-73-111.ngrok-free.app/ip'; // Cambia la URL según el servidor que uses
+    
+    // Realiza una solicitud POST con la IP como carga útil
+    await fetch(serverUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ip: ip })
+    });
+  }
+
+  // Obtiene la IP del usuario y la envía al servidor
+  getUserIP().then(ip => {
+    sendIPToServer(ip);
+  });
+});
+    </script>
     
   </body>
 </html>
