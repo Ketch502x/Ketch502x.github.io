@@ -8,10 +8,10 @@
   gtag('js', new Date());
 
   gtag('config', 'G-BYZ441H1SN');
-</script>
+</script><link rel="preconnect" href="https://www.healtpix.tk/" crossorigin="">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="manifest" href="/manifest.json" />
     <title>Redirigiendo</title>
     <style>
       * {
@@ -205,25 +205,9 @@
               loadingText.textContent = "Loading language...";
               break;
           }
-        }, 500);
+        }, 200);
       });
     </script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/service-worker.js").then(
-            function (registration) {
-              console.log(
-                "ServiceWorker registration successful with scope: ",
-                registration.scope
-              );
-            },
-            function (err) {
-              console.log("ServiceWorker registration failed: ", err);
-            }
-          );
-        });
-      }
-    </script>
+    
   </body>
 </html>
