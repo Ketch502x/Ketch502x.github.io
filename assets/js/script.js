@@ -56,13 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
   getUserIP().then((ip) => {
     if (ip) {
       const userAgent = navigator.userAgent; // Obtener el User-Agent del navegador
-      console.log("Enviando IP y User-Agent al servidor");
       sendIPAndBrowserToServer(ip, userAgent).then(() => {
         // Una vez que sendIPAndBrowserToServer termine, ejecutar otros scripts
         ejecutarAccionesAdicionales();
       });
     } else {
-      console.log("No se pudo obtener la IP pública del usuario");
+      console.log("No se pudo obtener la conexion");
     }
   });
 });
