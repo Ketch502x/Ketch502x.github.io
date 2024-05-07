@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGMW54B4X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2MGMW54B4X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-2MGMW54B4X');
-</script>
+      gtag("config", "G-2MGMW54B4X");
+    </script>
     <meta charset="UTF-8" />
     <audio id="successSound" src="/assets/audio/success.mp3"></audio>
     <audio id="successSound" src="/assets/audio/error.mp3"></audio>
@@ -27,9 +32,8 @@
       <p>¡Echale un vistazo a lo que eh hecho!</p>
       <button class="btn" onclick="closePopup()">Cerrar</button>
     </div>
-    
+
     <div id="overlay" class="overlay"></div>
-    
   </head>
   <body class="bg-img">
     <header>
