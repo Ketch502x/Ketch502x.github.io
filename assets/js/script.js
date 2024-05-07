@@ -8,10 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new Error(`Error al obtener la IP: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log("IP obtenida:", data.ip);
       return data.ip;
     } catch (error) {
-      console.error("Error al obtener la IP:", error);
+      console.error("Error to get, bad conection:", error);
       return null;
     }
   }
